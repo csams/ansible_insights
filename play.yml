@@ -1,0 +1,17 @@
+- hosts: localhost
+  tasks:
+    - name: Get some facts from insights
+      insights: 
+        plugins:
+          "insights.parsers.hostname.Hostname":
+          "demo.rules.fobmaster.report":
+             foo: 4
+
+    - debug: var=insights
+    - name: Get some more facts from insights
+      insights: 
+        plugins:
+          "insights.parsers.hostname.Hostname":
+          "demo.rules.fobmaster.report":
+
+    - debug: var=insights
