@@ -1,4 +1,5 @@
-from insights import make_response, rule
+#!/usr/bin/env python
+from insights import make_response, rule, run
 from insights.core.dr import get_metadata
 
 
@@ -9,3 +10,7 @@ def report():
         return make_response("LESS_THAN_5")
     else:
         return make_response("GREATER_EQUAL_5")
+
+
+if __name__ == "__main__":
+    run(report, print_summary=True)

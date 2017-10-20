@@ -1,6 +1,6 @@
 - hosts: localhost
   tasks:
-    - name: Get some facts from insights
+    - name: Get some facts from Insights
       insights: 
         plugins:
           "insights.parsers.hostname.Hostname":
@@ -8,10 +8,13 @@
              foo: 4
 
     - debug: var=insights
-    - name: Get some more facts from insights
+
+    - name: Get some more facts from Insights
       insights: 
         plugins:
           "insights.parsers.hostname.Hostname":
           "demo.rules.fobmaster.report":
+          "demo.rules.sample_script.report":
+          "demo.rules.stand_alone.report":
 
     - debug: var=insights
