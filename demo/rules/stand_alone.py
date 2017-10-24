@@ -3,7 +3,7 @@ from __future__ import print_function
 from collections import namedtuple
 
 from insights import get_active_lines, parser, Parser
-from insights import make_response, rule, run
+from insights import make_response, rule
 from insights.core.spec_factory import SpecFactory
 from insights.parsers.redhat_release import RedhatRelease
 
@@ -37,8 +37,11 @@ class HostParser(Parser):
 @rule(HostParser, RedhatRelease)
 def report(hp, rhr):
     if len(hp.hosts) > 1:
-        return make_response("ERROR_KEY_TOO_MANY_HOSTS", number=len(hp.hosts))
+        return make_response("ERROR_KEY_TOO_MANY_HOSTS",
+                             number=len(hp.hosts),
+                             product=rhr.product)
 
 
 if __name__ == "__main__":
+    from insights import run
     run(report, print_summary=True)

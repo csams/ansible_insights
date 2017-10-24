@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-from insights import run
 from insights.core.plugins import make_response, rule
 from insights.parsers.redhat_release import RedhatRelease
 
@@ -11,4 +10,5 @@ def report(rel):
 
 
 if __name__ == "__main__":
+    from insights import run
     run(report, print_summary=True)

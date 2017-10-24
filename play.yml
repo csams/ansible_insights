@@ -3,11 +3,10 @@
     - name: Get some facts from Insights
       insights: 
         plugins:
-          "insights.parsers.hostname.Hostname":
           "demo.rules.fobmaster.report":
              foo: 4
 
-    - debug: var=insights
+    - debug: var=insights.fobmaster_report.foo
 
     - name: Get some more facts from Insights
       insights: 
