@@ -3,6 +3,7 @@ from setuptools import setup, find_packages
 runtime = set([
     'ansible',
     'insights-core'
+    'lxml'
 ])
 
 if __name__ == "__main__":
