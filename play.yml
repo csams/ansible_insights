@@ -6,7 +6,7 @@
           "demo.rules.fobmaster.report":
              foo: 4
 
-    - debug: var=insights.fobmaster_report.foo
+    - debug: var=insights
 
     - name: Get some more facts from Insights
       insights: 
