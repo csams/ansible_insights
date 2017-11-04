@@ -10,11 +10,11 @@ sf = SpecFactory()
 
 activeconfig = sf.simple_file("sos_strings/wildfly_full-10/configuration.json",
                               context=JDRContext,
-                              Kind=RawFileProvider,
-                              name="active_config")
+                              kind=RawFileProvider,
+                              name="activeconfig")
 
 sacfg = sf.simple_file("$JBOSS_HOME/standalone/configuration/standalone.xml",
-                       Kind=RawFileProvider,
+                       kind=RawFileProvider,
                        name="sacfg")
 
 salog = sf.simple_file("$JBOSS_HOME/standalone/log/server.log", name="salog")
