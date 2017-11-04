@@ -1,13 +1,11 @@
 from setuptools import setup, find_packages
 
-
 runtime = set([
     'ansible',
     'insights-core'
 ])
 
 if __name__ == "__main__":
-    # allows for runtime modification of rpm name
     name = "ansible_insights"
 
     setup(
