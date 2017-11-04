@@ -14,10 +14,13 @@ activeconfig = sf.simple_file("sos_strings/wildfly_full-10/configuration.json",
                               name="activeconfig")
 
 sacfg = sf.simple_file("$JBOSS_HOME/standalone/configuration/standalone.xml",
+                       context=[JBossContext, JDRContext],
                        kind=RawFileProvider,
                        name="sacfg")
 
-salog = sf.simple_file("$JBOSS_HOME/standalone/log/server.log", name="salog")
+salog = sf.simple_file("$JBOSS_HOME/standalone/log/server.log",
+                       context=[JBossContext, JDRContext],
+                       name="salog")
 
 
 @parser(activeconfig)
