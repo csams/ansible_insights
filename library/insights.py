@@ -36,7 +36,12 @@ def serialize(_type, obj):
 
 
 def main():
-    module_args = dict(plugins=dict(type="dict", required=True))
+    module_args = {
+        "plugins": {
+            "type": "dict",
+            "required": True
+        }
+    }
     module = AnsibleModule(argument_spec=module_args)
 
     plugins = module.params["plugins"] or {}
